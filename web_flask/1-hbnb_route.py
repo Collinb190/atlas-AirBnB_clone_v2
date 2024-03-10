@@ -18,7 +18,7 @@ def hello():
 # Decorator to tell Flask what URL should trigger our function.
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    return'HBNB'
+    return 'HBNB'
 
 
 # Prevents the Flask dev server from starting if imported elsewhere.
