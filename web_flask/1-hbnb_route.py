@@ -1,23 +1,31 @@
 #!/usr/bin/python3
 """
-This is a script that starts a Flask web application with two routes.
+This is a script that starts a Flask web application with three routes.
 """
 from flask import Flask
 
 
-# Name tells to look for resources.
+# Name tells flask to look for resources in the folder with this module.
 app = Flask(__name__)
+# Treats URLs with and without a trailing slash as the same.
+app.url_map.strict_slashes = False
 
 
 # Decorator to tell Flask what URL should trigger our function.
-@app.route('/', strict_slashes=False)
+@app.route('/')
 def hello():
+    """
+    Displays a message.
+    """
     return 'Hello HBNB!'
 
 
 # Decorator to tell Flask what URL should trigger our function.
-@app.route('/hbnb', strict_slashes=False)
+@app.route('/hbnb')
 def hbnb():
+    """
+    Displays a message.
+    """
     return 'HBNB'
 
 

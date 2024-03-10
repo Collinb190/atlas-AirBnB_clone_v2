@@ -5,24 +5,36 @@ This is a script that starts a Flask web application with three routes.
 from flask import Flask
 
 
-# Name tells to look for resources.
+# Name tells flask to look for resources in the folder with this module.
 app = Flask(__name__)
+# Treats URLs with and without a trailing slash as the same.
+app.url_map.strict_slashes = False
 
 
 # Decorator to tell Flask what URL should trigger our function.
-@app.route('/', strict_slashes=False)
+@app.route('/')
 def hello():
+    """
+    Displays a message.
+    """
     return 'Hello HBNB!'
 
 
 # Decorator to tell Flask what URL should trigger our function.
-@app.route('/hbnb', strict_slashes=False)
+@app.route('/hbnb')
 def hbnb():
+    """
+    Displays a message.
+    """
     return 'HBNB'
 
 
-@app.route('/c/<text>', strict_slashes=False)
+# Decorator to tell Flask what URL should trigger our function.
+@app.route('/c/<text>')
 def c_text(text):
+    """
+    Display “C ” followed by the value of the text variable.
+    """
     text = text.replace('_', ' ')
     return 'C {}'.format(text)
 
