@@ -64,3 +64,7 @@ class FileStorage:
             del FileStorage.__objects[del_obj]
         except (AttributeError, KeyboardInterrupt):
             pass
+
+    def close(self):
+        """ Deserializing the JSON file to objects. """
+        self.reload()
