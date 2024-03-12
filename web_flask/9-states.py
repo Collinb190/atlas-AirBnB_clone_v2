@@ -5,6 +5,7 @@ This is a script that starts a Flask web application with three routes.
 from flask import Flask, render_template
 from models import storage
 from models import *
+import os
 
 
 # Name tells flask to look for resources in the folder with this module.
@@ -20,10 +21,10 @@ def states(state_id=None):
     """
     Displays the cities and states in order A-Z.
     """
-    state = storage.all('State')
+    states = storage.all('State')
     if state_id is not None:
         state_id = 'State.' + state_id
-    return render_template("9-states.html", state=state, state_id=state_id)
+    return render_template("9-states.html", states=states, state_id=state_id)
 
 
 # Decorator to tell Flask to handle the teardown.
