@@ -19,8 +19,8 @@ def the_states():
     """
     Displays the states in a list.
     """
-    s = storage.all('State').values()
-    return render_template("7-states_list.html", s=s)
+    state = storage.all('State').values()
+    return render_template("7-states_list.html", state=state)
 
 
 # Decorator to tell Flask to handle the teardown.
