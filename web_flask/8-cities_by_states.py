@@ -19,8 +19,8 @@ def cities_by_states():
     """
     Displays the cities and states in order A-Z.
     """
-    states = storage.all('State').values()
-    return render_template("8-cities_by_states.html", states=states)
+    states = storage.all("State").values()
+    return render_template('8-cities_by_states.html', states=states)
 
 
 # Decorator to tell Flask to handle the teardown.
