@@ -35,4 +35,3 @@ def take_down(self):
 # Prevents the Flask dev server from starting if imported elsewhere.
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
