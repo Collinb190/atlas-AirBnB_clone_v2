@@ -19,8 +19,8 @@ def cities_by_states():
     """
     Displays the cities and states in order A-Z.
     """
-    state = storage.all('State').values()
-    return render_template("8-cities_by_states.html", state=state)
+    states = storage.all('State').values()
+    return render_template("8-cities_by_states.html", states=states)
 
 
 # Decorator to tell Flask to handle the teardown.
@@ -35,3 +35,4 @@ def take_down(self):
 # Prevents the Flask dev server from starting if imported elsewhere.
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
