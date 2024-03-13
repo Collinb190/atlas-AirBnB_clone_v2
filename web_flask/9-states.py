@@ -5,7 +5,6 @@ This is a script that starts a Flask web application with three routes.
 from flask import Flask, render_template
 from models import storage
 from models import *
-import os
 
 
 # Name tells flask to look for resources in the folder with this module.
